@@ -18,6 +18,11 @@ class CreateCouponRequest extends FormRequest
         ];
     }
 
+    protected function prepareForValidation()
+    {
+        $this->merge(['name' => 'MERGED-PREPARE-FOR-VALIDATION']);
+    }
+
     protected function passedValidation()
     {
         $this->replace([]);
